@@ -1,6 +1,12 @@
 <template>
   <div class="hello">
+    <highlight :selectors="'#cli'"></highlight>
     <h1>{{ msg }}</h1>
+    <div>
+      <div id="cli" @click="click">
+        <span>试一试</span>
+      </div>
+    </div>
     <p>
       For guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -31,10 +37,19 @@
 </template>
 
 <script>
+import Highlight from '@/highlight/index'
 export default {
   name: 'HelloWorld',
+  components: {
+    Highlight
+  },
   props: {
     msg: String
+  },
+  methods: {
+    click () {
+      console.log('hello world')
+    }
   }
 }
 </script>
