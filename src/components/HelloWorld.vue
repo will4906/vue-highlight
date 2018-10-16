@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <highlight :selectors="'#cli'"></highlight>
+    <!-- <highlight :selectors="'#cli'"></highlight> -->
     <h1>{{ msg }}</h1>
     <div>
       <div id="cli" @click="click">
@@ -19,7 +19,7 @@
     </ul>
     <h3>Essential Links</h3>
     <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
+      <li id="li-core-docs"><a id="core-docs" href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
       <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
       <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
@@ -37,12 +37,9 @@
 </template>
 
 <script>
-import Highlight from '@/highlight/index'
+/* eslint-disable */
 export default {
   name: 'HelloWorld',
-  components: {
-    Highlight
-  },
   props: {
     msg: String
   },
@@ -70,4 +67,10 @@ li {
 a {
   color: #42b983;
 }
+#core-docs {
+  background: rebeccapurple
+}
+/* #cli {
+  background: #234523
+} */
 </style>
